@@ -1,1 +1,1 @@
-web: gunicorn CBC.wsgi
+web: gunicorn CBC.wsgi --log-file-

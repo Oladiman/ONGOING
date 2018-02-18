@@ -28,7 +28,7 @@ SECRET_KEY = '*1s05l3w8=w)-0qh$+!mwz4hyou5ckwa76=*0@7lr(-x!g$wa%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cbc.herokuapp.com']
+ALLOWED_HOSTS = ['campus-cbc.herokuapp.com']
 
 
 # Application definition
@@ -82,15 +82,13 @@ WSGI_APPLICATION = 'CBC.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -137,4 +135,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = [STATIC_DIR, ]
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
