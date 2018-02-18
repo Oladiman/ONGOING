@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT CBC.wsgi:application
+web: gunicorn CBC.wsgi --log-file-
