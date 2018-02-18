@@ -28,7 +28,7 @@ SECRET_KEY = '*1s05l3w8=w)-0qh$+!mwz4hyou5ckwa76=*0@7lr(-x!g$wa%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cbc.herokuapp.com']
 
 
 # Application definition
@@ -88,6 +88,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
@@ -130,5 +132,9 @@ MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-STATICFILES_DIRS = [STATIC_DIR, ]
+
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = [STATIC_DIR, ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

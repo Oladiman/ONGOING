@@ -9,3 +9,4 @@ Pillow==5.0.0
 pylint==1.8.1
 six==1.11.0
 wrapt==1.10.11
+-r requirements/prod.txt
