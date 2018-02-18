@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-from dj_database_url import config
+from decouple import config
+import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,6 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*1s05l3w8=w)-0qh$+!mwz4hyou5ckwa76=*0@7lr(-x!g$wa%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
