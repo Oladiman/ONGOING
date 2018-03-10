@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^shop/$', views.shop, name='shop'),
     url(r'^contact-us/$', views.contact, name='contact'),
     url(r'^Terms-of-use/$',views.Terms_of_use,name='Terms-of-use'),
-    url(r'^about-us/$', views.about_us, name='about-us'),
+    url(r'^about-us/$', views.about_cbc, name='about-cbc'),
     url(r'^privacy-policy/$', views.privacy_policy, name='privacy_policy'),
 ]
 
