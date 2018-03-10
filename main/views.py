@@ -120,3 +120,12 @@ def login_signup(request):
 
 def contact(request):
     return render(request, 'contact-us.html', {})
+def Terms_of_use(request):
+    return render(request, 'Terms-of-use.html', {})
+def about_us(request):
+    return render(request, 'about-us.html', {})
+def privacy_policy(request):
+    return render(request, 'privacy-policy.html', {})
+
+
+
