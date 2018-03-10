@@ -123,7 +123,7 @@ def contact(request):
 def Terms_of_use(request):
     return render(request, 'Terms-of-use.html', {})
 def about_us(request):
-    return render(request, 'about-us.html', {})
+    return render(request, 'about-cbc.html', {})
 def privacy_policy(request):
     return render(request, 'privacy-policy.html', {})
 
