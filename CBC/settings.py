@@ -30,7 +30,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['campus-cbc.herokuapp.com']
+ALLOWED_HOSTS = ['campus-cbc.herokuapp.com','cbconnect.store']
 
 
 # Application definition
