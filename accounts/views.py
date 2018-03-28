@@ -24,7 +24,7 @@ def edit_user(request, username):
     user = User.objects.get(username=username)
     user_form = UserForm(instance=user)
     ProfileInlineFormset = inlineformset_factory(User, UserProfile, fields=('bio',
-                                                                                'phone', 'campus', 'state', 'picture',
+                                                                                'phone', 'campus', 'state',
                                                                                 'country'))
     formset = ProfileInlineFormset(instance=user)
 
