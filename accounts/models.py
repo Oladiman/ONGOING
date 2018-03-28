@@ -8,7 +8,6 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
     bio = models.TextField(default='', blank=True)
     phone = models.CharField(max_length=20, blank=True, default='')
-    picture = models.ImageField(upload_to='profile')
     campus = models.CharField(max_length=100, default='', blank=True)
     state = models.CharField(max_length=100, default='', blank=True)
     country = models.CharField(max_length=100, default='', blank=True)
